@@ -1,0 +1,71 @@
+﻿@model WebQuanLyLopHoc_Nhom8.Models.HOCSINH
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết học sinh</h2>
+
+<div>
+    <h4>Học sinh @Html.DisplayFor(model => model.TenHS)</h4>
+    <hr />
+    <dl class="dl-horizontal" style="align-content:center">
+        <dt>
+            Mã học sinh
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaHS)
+        </dd>
+
+        <dt>
+            Họ và tên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHS)
+        </dd>
+
+        <dt>
+            Ngày sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+        <dt>
+            Giới tính
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GioiTinh)
+        </dd>
+
+        <dt>
+            Quê quán
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QueQuan)
+        </dd>
+
+        <dt>
+            SĐT
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            Hình ảnh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhAnh)
+        </dd>
+    </dl>
+</div>
+<form action="/HOCSINHs/Index">
+    <input type="submit" value="Quay lại" />
+</form>

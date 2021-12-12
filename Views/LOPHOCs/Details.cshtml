@@ -1,0 +1,41 @@
+﻿@model WebQuanLyLopHoc_Nhom8.Models.LOPHOC
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Thông tin lớp học</h2>
+
+<div>
+    <h4>@Model.TenLH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Lớp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLH)
+        </dd>
+
+        <dt>
+            Khối
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KHOI.TenKhoi)
+        </dd>
+
+        <dt>
+            Giáo viên chủ nhiệm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIAOVIEN.TenGV)
+        </dd>
+
+    </dl>
+</div>
+<form action="/LOPHOCs/Index">
+    <input type="submit" value="Quay lại" />
+</form>

@@ -1,0 +1,59 @@
+﻿@model PagedList.IPagedList<WebQuanLyLopHoc_Nhom8.Models.LOPHOC>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lớp học</h2>
+
+<p>
+    @Html.ActionLink("Thêm lớp học", "Create")
+    @using (Html.BeginForm())
+    {
+        <div style="margin-top:-50px;; margin-bottom:60px">
+            <p style="padding-left:800px">
+                Tìm lớp học:@Html.TextBox("searchstr")
+                <input type="submit" value="Tìm kiếm" />
+            </p>
+        </div>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Lớp
+        </th>
+        <th>
+            Khối
+        </th>
+        <th>
+            Giáo viên chủ nhiệm
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenLH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KHOI.TenKhoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIAOVIEN.TenGV)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MaLH }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaLH }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaLH })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<div style="text-align:center">Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount</div>
+<div style="text-align:center">@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</div>

@@ -1,0 +1,80 @@
+﻿@model WebQuanLyLopHoc_Nhom8.Models.HOCSINH
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa học sinh</h2>
+
+<h3>Bạn có chắc muốn xóa học sinh này khỏi danh sách?</h3>
+<div>
+    <h4>Thông tin học sinh cần xóa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã học sinh
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaHS)
+        </dd>
+
+        <dt>
+            Họ và tên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHS)
+        </dd>
+
+        <dt>
+            Ngày sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+        <dt>
+            Giới tính
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GioiTinh)
+        </dd>
+
+        <dt>
+            Quê quán
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QueQuan)
+        </dd>
+
+        <dt>
+            SĐT
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            Hình ảnh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhAnh)
+        </dd>
+    </dl>
+    <hr /><br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+            <br /> <br />
+            @Html.ActionLink("Hủy", "Index")
+        </div>
+    }
+</div>

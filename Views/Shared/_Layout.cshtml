@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Haui</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/Content/Style.css" type="text/css" />
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1 id="logo-text"><a href="/home/index"><img src="~/Content/imgweb/logo.jpg" width="150" height="100" /></a></h1>
+            <h2 id="slogan">Quản lý lớp học</h2>
+        </div>
+        <div id="menu">
+            <ul>
+                <li id="current"><a href="/">Home</a></li>
+                <li class="last">
+                    <a href="#/">Danh sách</a>
+                    <ul id="submenu">
+                        <li><a href="/HOCSINHs">Học sinh</a></li>
+                        <li><a href="/LOPHOCs">Lớp học</a></li>
+                        <li><a href="/MONHOCs">Môn học</a></li>
+                        <li><a href="/GIAOVIENs">Giáo viên</a></li>
+                    </ul>
+                </li>
+                <li id="current"><a href="/QUANLYLOPHOC">Quản lý lớp học</a></li>
+                <li id="current"><a href="/">Home</a></li>
+                <li id="current"><a href="/">Home</a></li>
+
+            </ul>
+        </div>
+        <div id="content-wrap">
+            <div id="sidebar">
+            </div>
+            <div id="main">
+                @RenderBody()
+                @RenderSection("scripts", required: false)
+            </div>
+        </div>
+        <div id="footer">
+            <p>@@Developed by Group 8</p>
+
+        </div>
+    </div>
+</body>
+</html>

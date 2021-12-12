@@ -1,0 +1,80 @@
+﻿@model WebQuanLyLopHoc_Nhom8.Models.GIAOVIEN
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết giáo viên</h2>
+
+<div>
+    <h4>Thông tin giáo viên @Model.TenGV</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên giáo viên:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGV)
+        </dd>
+
+        <dt>
+            Ngày sinh:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+        <dt>
+            Giới tính:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GioiTinh)
+        </dd>
+
+        <dt>
+            Quê quán:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QueQuan)
+        </dd>
+
+        <dt>
+            SĐT:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            Email:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            Hình ảnh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhAnh)
+        </dd>
+
+        <dt>
+            Môn dạy:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MONHOC.TenMH)
+        </dd>
+    </dl>
+</div>
+<form action="/GIAOVIENs/Index">
+    <input type="submit" value="Quay lại" />
+</form>

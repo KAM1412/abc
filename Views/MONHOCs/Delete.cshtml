@@ -1,0 +1,22 @@
+﻿@model WebQuanLyLopHoc_Nhom8.Models.MONHOC
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa môn học</h2>
+
+<h3>Bạn có chắc muốn xóa môn @Model.TenMH ?</h3>
+<div>
+    <hr />
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Hủy", "Index")
+        </div>
+    }
+</div>

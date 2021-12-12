@@ -1,0 +1,58 @@
+﻿@using WebQuanLyLopHoc_Nhom8.Models
+@model LOPHOC
+@{
+    ViewBag.Title = "Index";
+    List<HOCSINH> ds = ViewBag.dshs;
+}
+
+<h2>Quản lý Lớp học</h2>
+<br />
+<p>
+    @using (Html.BeginForm())
+    {
+        <div>
+            <p>
+                Lớp cần quản lý:@Html.TextBox("lophoc")
+                @*<select id="lophoc" name="lophoc">
+                    @foreach (var item in lh)
+                    {
+                        <option value="@item.TenLH"> @item.TenLH</option>
+                    }
+                </select>*@
+                <input type="submit" value="OK" />
+            </p>
+        </div>
+    }
+    <table class="table">
+        <tr>
+            <th>Mã học sinh</th>
+            <th>Tên học sinh</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>Quê quán</th>
+            <th>SĐT</th>
+            <th>Hình ảnh </th>
+            <th>Liên hệ phụ huynh</th>
+        </tr>
+        @foreach (var item in ds)
+        {
+            <tr>
+                <td>@item.MaHS</td>
+                <td>@item.TenHS</td>
+                <td>@item.NgaySinh</td>
+                <td>@item.GioiTinh</td>
+                <td>@item.QueQuan</td>
+                <td>@item.SDT</td>
+                <td>@item.HinhAnh</td>
+                <td>@Html.ActionLink("Liên hệ phụ huynh", "LienHePhuHuynh", new { id = item.MaHS })</td>
+            </tr>
+        }
+    </table>
+</p>
+<form action="TinhTrangHocPhi" method="post">
+    <input type="submit" value="Tình trạng học phí" />
+</form>
+<form action="#" method="post">
+    <input type="submit" value="Kết quả học tập" />
+</form>
+
